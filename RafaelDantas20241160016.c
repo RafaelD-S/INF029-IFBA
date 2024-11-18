@@ -67,16 +67,6 @@ int fatorial(int x) { // função utilizada para testes
   return fat;
 }
 
-int teste(int a) {
-  int val;
-  if (a == 2)
-    val = 3;
-  else
-    val = 4;
-
-  return val;
-}
-
 /*
  Q1 = validar data
 @objetivo
