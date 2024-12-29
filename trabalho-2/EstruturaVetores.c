@@ -265,10 +265,10 @@ int getDadosDeTodasEstruturasAuxiliares(int vetorAux[]) {
 
   for (int i = 0; i < TAM; i++) {
     if (vetorPrincipal[i].vetor != NULL) {
-      temNum = 1;
       for (int j = 0; j < vetorPrincipal[i].ocupado; j++) {
         vetorAux[count] = vetorPrincipal[i].vetor[j];
         count++;
+        temNum = 1;
       }
     }
   }
@@ -324,7 +324,7 @@ Rertono (int)
 int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho) {
   int retorno = SUCESSO;
 
-  if (posicao < 1 || posicao > TAM ) {
+  if (posicao < 1 || posicao > TAM) {
     return POSICAO_INVALIDA;
   }
 
@@ -334,7 +334,7 @@ int modificarTamanhoEstruturaAuxiliar(int posicao, int novoTamanho) {
 
   int tamanhoAtual = vetorPrincipal[posicao].tamanho;
   int tamanhoFinal = tamanhoAtual + novoTamanho;
-  
+
   if (tamanhoFinal < 1) {
     return NOVO_TAMANHO_INVALIDO;
   }
