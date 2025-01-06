@@ -367,23 +367,21 @@ Retorno (int)
 estrutura
 */
 int getQuantidadeElementosEstruturaAuxiliar(int posicao) {
-  int retorno = SUCESSO;
+  posicao -= 1;
 
-  if (posicao < 1 || posicao > 10) {
-    retorno = POSICAO_INVALIDA;
-  } else {
-    if (vetorPrincipal[posicao].vetor != NULL) {
-      if (vetorPrincipal[posicao].ocupado == 0) {
-        retorno = ESTRUTURA_AUXILIAR_VAZIA;
-      } else {
-        retorno = vetorPrincipal[posicao].ocupado;
-      }
-    } else {
-      retorno = SEM_ESTRUTURA_AUXILIAR;
-    }
+  if (posicao >= TAM || posicao < 0) {
+    return POSICAO_INVALIDA;
   }
 
-  return retorno;
+  if (vetorPrincipal[posicao].vetor == NULL) {
+    return SEM_ESTRUTURA_AUXILIAR;
+  } else {
+    if (vetorPrincipal[posicao].ocupado == 0) {
+      return ESTRUTURA_AUXILIAR_VAZIA;
+    } else {
+      return vetorPrincipal[posicao].ocupado;
+    }
+  }
 }
 
 /*
